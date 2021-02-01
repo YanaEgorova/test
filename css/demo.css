@@ -1,0 +1,243 @@
+@import './style.css';
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+.demo-4 {
+  --color-text: #4b2cf2;
+  --color-link: #ec2525;
+  --color-link-hover: #fff;
+  --color-enter: #4b2cf2;
+  --color-title: #ffffff;
+  --color-subtitle: #ec2525;
+  --color-content: #1c1b1b;
+  --font-alt: 400 5vw/1 'Poppins', serif;
+}
+
+.hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.frame {
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: none;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.codrops-links {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0 1em 0 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.codrops-icon {
+  display: inline-block;
+  margin: 0.15em;
+  padding: 0.25em;
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.content {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.content--intro {
+  z-index: 100;
+  height: 200vh;
+}
+
+.content--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.content__inner {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.content--intro .content__inner {
+  background: pink;
+  background-color: #fff;
+}
+
+.shape-wrap {
+  position: relative;
+  z-index: 10;
+  margin: -5px 0 0 0; /* Hide the gap */
+}
+
+.shape {
+  height: 100vh;
+  width: 100%;
+  display: block;
+  fill: pink;
+  fill: #fff;
+}
+
+.content__subtitle {
+  font: var(--font-alt);
+  font-size: 1.5em;
+  color: var(--color-subtitle);
+  padding: 0.5em 0 0 0;
+  margin: 0;
+}
+
+.enter {
+  margin: 6vh 0 0 0;
+  font-size: 1em;
+  letter-spacing: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  white-space: pre;
+  color: var(--color-enter);
+  pointer-events: auto;
+}
+
+.enter:hover,
+.enter:focus {
+  color: var(--color-enter);
+  border: none;
+}
+
+.enter span {
+  display: inline-block;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.menu__item {
+  font: var(--font-alt);
+  font-size: 3vw;
+  color: var(--color-menu-item);
+  margin: 0 1em;
+  position: relative;
+  line-height: 1;
+}
+
+.menu__item:hover,
+.menu__item:focus {
+  color: var(--color-menu-item-hover);
+}
+
+.menu__item:nth-child(2):hover {
+  color: var(--color-menu-item-hover-alt);
+}
+
+.demo-2 .menu__item {
+  pointer-events: none;
+  padding: 3em;
+}
+
+.demo-2 .menu__item span {
+  pointer-events: auto;
+}
+
+.content__text {
+  font-size: 1.85em;
+  max-width: 800px;
+  text-align: left;
+}
+
+.content__text a {
+  color: var(--color-menu-item);
+}
+
+.content__text a:hover,
+.content__text a:focus {
+  color: var(--color-menu-item-hover);
+}
+
+.next-demo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1.5em 2em;
+  font-weight: bold;
+  color: var(--color-next);
+}
+
+.next-demo:hover,
+.next-demo:focus {
+  color: var(--color-next-hover);
+}
+
+@media screen and (max-width: 50em) {
+  .frame {
+    z-index: 1000;
+    display: block;
+    padding: 0.85em 0;
+  }
+  .demos {
+    font-size: 0.85em;
+    padding: 0 0.25em;
+  }
+  .codrops-header {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5em;
+  }
+  .codrops-header__title {
+    font-weight: bold;
+    padding-bottom: 0.25em;
+    text-align: center;
+  }
+  .github {
+    display: none;
+  }
+  .codrops-links {
+    margin: 0;
+  }
+  .content--intro .content__inner,
+  .demo-4 .content__inner {
+    padding-top: 12em;
+  }
+
+  .demo {
+    padding: 0;
+    margin: 0;
+  }
+  .menu__item {
+    margin: 0.5em 0;
+    font-size: 1.5em;
+  }
+  .content__text {
+    padding: 1em;
+    font-size: 1em;
+  }
+  .next-demo {
+    position: relative;
+  }
+}
